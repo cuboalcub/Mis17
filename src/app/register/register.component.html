@@ -1,0 +1,52 @@
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+  <div class="bg-white shadow-lg rounded-lg p-8 w-80">
+    <div class="text-center mb-6">
+      <h1 class="text-4xl font-extrabold text-slate-800">Miselania</h1>
+      <p class="text-slate-500 mt-2">Crea una cuenta</p>
+    </div>
+    <form class="flex flex-col" (ngSubmit)="onSignup()">
+      <input
+        type="text"
+        name="username"
+        placeholder="Nombre"
+        class="border border-gray-300 rounded-md p-3 mb-4 w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200"
+        [(ngModel)]="username"
+        required
+      />
+      <input
+        type="text"
+        name="email"
+        placeholder="Email"
+        class="border border-gray-300 rounded-md p-3 mb-4 w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200"
+        [(ngModel)]="email"
+        required
+      />
+      <input
+        type="password"
+        name="password"
+        placeholder="Contraseña"
+        class="border border-gray-300 rounded-md p-3 mb-6 w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition duration-200"
+        [(ngModel)]="password"
+        required
+      />
+      
+      
+      <button (click)="executeRecaptchavisible()" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-md shadow-md transition duration-200 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </button>
+
+      
+
+      <p class="text-center text-slate-500 mt-4">
+        ¿Ya tienes cuenta?
+        <a class="text-blue-600 hover:text-blue-700" routerLink="">
+          Entrar
+        </a>
+      </p>
+      <p class="text-center text-slate-500 mt-2">{{ message }}</p>
+    </form>
+  </div>
+</div>
